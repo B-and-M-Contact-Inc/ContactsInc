@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class ContactsManagerApplication {
     public static void main(String[] args) {
         // Console Loop
