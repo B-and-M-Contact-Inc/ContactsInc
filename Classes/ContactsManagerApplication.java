@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ContactsManagerApplication {
     public static void main(String[] args) throws IOException {
         var list = new ContactList("data", "contacts.txt"); // first thing that runs
-        list.newContact(new Contact("Ron", "Weasley", 123890423));
+        // list.newContact(new Contact("Ron", "Weasley", 123890423)); // testing newContact()
 
         // Console Loop
         System.out.println("Contacts Manager Application ~ Start");
@@ -42,6 +42,7 @@ public class ContactsManagerApplication {
                     list.deleteContact();
                     break;
                 case 5: // Exit
+                    System.out.println("Sorting Hat says: 'Goodbye!'");
                     return;
                 default:
                     // invalid input - continue??
