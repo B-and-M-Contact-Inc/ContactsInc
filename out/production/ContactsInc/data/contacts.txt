@@ -1,4 +1,6 @@
-Harry,Potter,<::>,1234567890
-Hermoine,Grangier,>::<,987654321
-Ron,Weasley,<---*,123890423
-Ron,Weasley,<---*,123890423
+Harry,Potter,null,1234567890
+Hermoine,Grangier,null,987654321
+Ron,Weasley,null,123890423
+Ron,Weasley,null,123890423
+Ron,Weasley,null,123890423
+Luna,Lovegood,null,866787900

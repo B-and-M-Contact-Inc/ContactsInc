@@ -106,4 +106,19 @@ public class ContactList {
 
 
         }
+
+        public int searchName(){
+            System.out.println("Please enter to first name of who you want to search for!");
+            Scanner scanner = new Scanner(System.in);
+            String fnameCapture = scanner.nextLine();
+            System.out.println("Perfect! Now please enter the last name of the person you want to search for!");
+            String lnameCapture = scanner.nextLine();
+            for (Contact contact : listOfNames) {
+                if(fnameCapture.equalsIgnoreCase(contact.getFirstName()) && lnameCapture.equalsIgnoreCase(contact.getLastName())){
+                    return contact.getContactNumbers();
+                }
+
+            }
+            return -1;
+        }
 }

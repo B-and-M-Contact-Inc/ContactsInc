@@ -36,7 +36,7 @@ public class ContactsManagerApplication {
                     break;
                 case 3: // search a contact by name
                     // search by name String(ignore case)
-                    //
+                    System.out.println(list.searchName());
                     break;
                 case 4: // delete an existing contact
                     break;
