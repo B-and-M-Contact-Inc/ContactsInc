@@ -1,12 +1,10 @@
-Hermoine,Grangier,asciiArt/Hermoine.txt,987654321
+Hermoine,Grangier,asciiArt/Hermoine.txt,5679034277
 
-Ron,Weasley,asciiArt/Ron.txt,123890423
+Ron,Weasley,asciiArt/Ron.txt,8901234224
 
-Luna,Lovegood,asciiArt/Luna.txt,866787900
+Luna,Lovegood,asciiArt/Luna.txt,879457622
 
-Miles,Raker,asciiArt/Nargul.txt,983745
+Miles,Raker,asciiArt/Nargul.txt,0983412422
 
-Tom,Riddle,asciiArt/Tom.txt,10848392
-
-Ginny,Weasley,asciiArt/Filch.txt,19848
+Ginny,Weasley,asciiArt/Filch.txt,8901855222
 
