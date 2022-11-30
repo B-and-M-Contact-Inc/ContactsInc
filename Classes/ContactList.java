@@ -1,11 +1,13 @@
 package Classes;
 
+import java.awt.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 import static java.nio.file.Files.readAllLines;
@@ -56,7 +58,7 @@ public class ContactList {
                 // create new contact
                 String[] line = name.split(",");
 
-                Contact nameofcontact = new Contact(line[0], line[1], line[2], Integer.parseInt(line[3])); // parsed string
+                Contact nameofcontact = new Contact(line[0], line[1], Integer.parseInt(line[3])); // parsed string
                 // add contact to list
                 listOfNames.add(nameofcontact);
             }
@@ -90,5 +92,18 @@ public class ContactList {
                 sb.append(contact.toString() + "\n");
             }
             return sb.toString();
+        }
+
+        public void getInfo() throws IOException {
+            System.out.println("Please enter the first name of the person you want to ADD to the list");
+            Scanner scanner = new Scanner(System.in);
+            String snatchFirstName = scanner.nextLine();
+            System.out.println("Great! now please enter the last name only.");
+            String snatchLastName = scanner.nextLine();
+            System.out.println("Please enter the number of the NEW contact.");
+            int snatchNumber = Integer.parseInt(scanner.nextLine());
+                newContact(new Contact(snatchFirstName,snatchLastName, snatchNumber));
+
+
         }
 }

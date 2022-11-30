@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ContactsManagerApplication {
     public static void main(String[] args) throws IOException {
         var list = new ContactList("data", "contacts.txt"); // first thing that runs
-        list.newContact(new Contact("Ron", "Weasley", "<---*", 123890423));
+        list.newContact(new Contact("Ron", "Weasley", 123890423));
 
         // Console Loop
         System.out.println("Contacts Manager Application ~ Start");
@@ -32,6 +32,7 @@ public class ContactsManagerApplication {
                     System.out.println(list.viewContacts());
                     break;
                 case 2: // add a new contact
+                    list.getInfo();
                     break;
                 case 3: // search a contact by name
                     // search by name String(ignore case)
