@@ -29,7 +29,8 @@ public class ContactsManagerApplication {
 
             switch(userInput){
                 case 1: // view contacts
-                    System.out.println(list.viewContacts());
+                    System.out.println(list.displayContactsFancy());
+                    //System.out.println(list.viewContacts());
                     break;
                 case 2: // add a new contact
                     list.getInfo();
