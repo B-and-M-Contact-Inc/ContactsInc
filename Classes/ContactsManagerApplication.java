@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 
 public class ContactsManagerApplication {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         var list = new ContactList("data", "contacts.txt"); // first thing that runs
         // list.newContact(new Contact("Ron", "Weasley", 123890423)); // testing newContact()
 
@@ -46,6 +46,7 @@ public class ContactsManagerApplication {
                     return;
                 default:
                     // invalid input - continue??
+
                     break;
             }
         }

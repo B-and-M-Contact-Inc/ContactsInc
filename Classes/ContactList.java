@@ -72,7 +72,7 @@ public class ContactList {
             }
             String[] line = name.split(",");
 
-            Contact nameofcontact = new Contact(line[0], line[1], line[2], Integer.parseInt(line[3])); // parsed string
+            Contact nameofcontact = new Contact(line[0], line[1], line[2], (line[3])); // parsed string
             // add contact to list
             listOfNames.add(nameofcontact);
         }
@@ -100,7 +100,7 @@ public class ContactList {
     }
 
 
-    public String viewContacts() {
+    public String viewContacts() throws Exception {
         StringBuilder sb = new StringBuilder();
         for (Contact contact : listOfNames) {
             sb.append(contact.toString() + "\n");
@@ -115,7 +115,7 @@ public class ContactList {
         System.out.println("Great! now please enter the last name only.");
         String snatchLastName = scanner.nextLine();
         System.out.println("Please enter the number of the NEW contact.");
-        int snatchNumber = Integer.parseInt(scanner.nextLine());
+        String snatchNumber = (scanner.nextLine());
         // randomly assign ascii art:
         int asciiAssignment = (int) Math.floor(Math.random()*9);
         newContact(new Contact(snatchFirstName, snatchLastName, imgPaths.get(asciiAssignment), snatchNumber));
@@ -123,7 +123,7 @@ public class ContactList {
 
     }
 
-    public int searchName() {
+    public String searchName() {
         System.out.println("Please enter to first name of who you want to search for!");
         Scanner scanner = new Scanner(System.in);
         String fnameCapture = scanner.nextLine();
@@ -135,7 +135,7 @@ public class ContactList {
             }
 
         }
-        return -1;
+        return "";
     }
 
     public void deleteContact() throws IOException {
