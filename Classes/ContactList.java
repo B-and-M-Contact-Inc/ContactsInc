@@ -1,6 +1,5 @@
 package Classes;
 
-import java.awt.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,6 +15,9 @@ import static java.nio.file.Files.readAllLines;
 public class ContactList {
 
     ArrayList<Contact> listOfNames = new ArrayList<>();  //list of contacts
+
+    List<String> imgPaths = new ArrayList<String>();
+
     String directory = "data";
     String filename = "contacts.txt";
 
@@ -44,7 +46,17 @@ public class ContactList {
             System.out.println("NOPE");
             Files.createFile(contactFile);
         }
-        //
+        // Build the asciiArt artPaths ArrayList
+        // can I do this with a loop through the asciiArt Folder?
+        imgPaths.add("asciiArt/Filch.txt");
+        imgPaths.add("asciiArt/Harry.txt");
+        imgPaths.add("asciiArt/Hermoine.txt");
+        imgPaths.add("asciiArt/Luna.txt");
+        imgPaths.add("asciiArt/Maxine.txt");
+        imgPaths.add("asciiArt/Nargul.txt");
+        imgPaths.add("asciiArt/Ron.txt");
+        imgPaths.add("asciiArt/Tom.txt");
+        imgPaths.add("asciiArt/Victor.txt");
     }
 
     private void readFile() throws IOException {
@@ -60,7 +72,7 @@ public class ContactList {
             }
             String[] line = name.split(",");
 
-            Contact nameofcontact = new Contact(line[0], line[1], Integer.parseInt(line[3])); // parsed string
+            Contact nameofcontact = new Contact(line[0], line[1], line[2], Integer.parseInt(line[3])); // parsed string
             // add contact to list
             listOfNames.add(nameofcontact);
         }
@@ -75,7 +87,7 @@ public class ContactList {
         List<String> textFileContents = new ArrayList<>() {
         };
         for (Contact contact : listOfNames) {
-            String singleLineData = contact.getFirstName() + "," + contact.getLastName() + "," + contact.getImg() + "," + contact.getContactNumbers() + "\n";
+            String singleLineData = contact.getFirstName() + "," + contact.getLastName() + "," + contact.getImgFilePath() + "," + contact.getContactNumbers() + "\n";
             textFileContents.add(singleLineData);
         }
         // write textFileContents to Contacts.txt
@@ -104,7 +116,9 @@ public class ContactList {
         String snatchLastName = scanner.nextLine();
         System.out.println("Please enter the number of the NEW contact.");
         int snatchNumber = Integer.parseInt(scanner.nextLine());
-        newContact(new Contact(snatchFirstName, snatchLastName, snatchNumber));
+        // randomly assign ascii art:
+        int asciiAssignment = (int) Math.floor(Math.random()*9);
+        newContact(new Contact(snatchFirstName, snatchLastName, imgPaths.get(asciiAssignment), snatchNumber));
 
 
     }
