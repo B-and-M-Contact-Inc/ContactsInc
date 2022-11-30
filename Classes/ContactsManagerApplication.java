@@ -39,6 +39,7 @@ public class ContactsManagerApplication {
                     System.out.println(list.searchName());
                     break;
                 case 4: // delete an existing contact
+                    list.deleteContact();
                     break;
                 case 5: // Exit
                     return;
