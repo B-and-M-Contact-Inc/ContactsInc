@@ -32,18 +32,18 @@ public class ContactList {
 
         //create directory if not exist
         if (Files.exists(contactDirectory)) {
-            System.out.println("True IT'S HERE");
+            //System.out.println("True IT'S HERE");
         } else {
-            System.out.println("ITS NOT HERE");
+            //System.out.println("ITS NOT HERE");
             Files.createDirectory(contactDirectory);
         }
         // create file if not exist
         if (Files.exists(contactFile)) {
-            System.out.println("YAY");
+            //System.out.println("YAY");
             // if it does exist, pull data from file, stick into List
             readFile();
         } else {
-            System.out.println("NOPE");
+            //System.out.println("NOPE");
             Files.createFile(contactFile);
         }
         // Build the asciiArt artPaths ArrayList
@@ -118,9 +118,19 @@ public class ContactList {
         String snatchNumber = (scanner.nextLine());
         // randomly assign ascii art:
         int asciiAssignment = (int) Math.floor(Math.random()*9);
-        newContact(new Contact(snatchFirstName, snatchLastName, imgPaths.get(asciiAssignment), snatchNumber));
-
-
+        // check to see if contact name already exists? do not add contact: do add contact
+        boolean duplicateExists = false;
+        for (Contact contact : listOfNames) {
+            if(contact.getFirstName().equalsIgnoreCase(snatchFirstName) && contact.getLastName().equalsIgnoreCase(snatchLastName)){
+                duplicateExists = true;
+            }
+        }
+        if(duplicateExists){
+             System.out.println("A contact with the input names already exists");
+             getInfo();
+        } else {
+            newContact(new Contact(snatchFirstName, snatchLastName, imgPaths.get(asciiAssignment), snatchNumber));
+        }
     }
 
     public String searchName() {
@@ -157,5 +167,67 @@ public class ContactList {
 
 
         }
+    }
+
+    public String displayContactsFancy(){
+        StringBuilder sb = new StringBuilder();
+        int maxCharactersInName = 0;
+        int maxCharactersInNumber = 0;
+        for (Contact contact : listOfNames) {
+            // name length
+            int nameLength = contact.getFirstName().length() + contact.getLastName().length() + 1;
+            if(nameLength > maxCharactersInName){
+                maxCharactersInName = nameLength;
+            }
+
+            // number length
+            int numLength = contact.getContactNumbers().length();
+            if(nameLength > maxCharactersInNumber){
+                maxCharactersInNumber = numLength + 3;
+            }
+        }
+        // works so far!
+        System.out.println("maxCharactersInNumber = " + maxCharactersInNumber);
+        System.out.println("maxCharactersInName = " + maxCharactersInName);
+
+        // build the output string
+        String nameSpaces = "";
+        int numberOfNameSpaces = maxCharactersInName - 4;
+        for(int i = 0; i < numberOfNameSpaces; i++){
+            nameSpaces+=" ";
+        }
+
+        String numSpaces = "";
+        int numberOfNumSpaces = maxCharactersInNumber - 12;
+        for(int i = 0; i < numberOfNumSpaces; i ++){
+            numSpaces += " ";
+        }
+
+        sb.append("Name").append(nameSpaces).append("|").append("Phone Number").append(numSpaces).append("|").append("\n");
+        int numberOfDashes = numberOfNameSpaces + numberOfNumSpaces + 20;
+        for(int i = 0; i < numberOfDashes; i++){
+            sb.append("-");
+        }
+        sb.append("\n");
+        // pull contact information
+        for (Contact contact : listOfNames) {
+            sb.append(contact.getFirstName()).append(" ").append(contact.getLastName());
+            // add spaces and bar
+            int tempSpaces = maxCharactersInName - (contact.getFirstName().length() + contact.getLastName().length() + 1);
+            for(int i = 0; i < tempSpaces; i++){
+                sb.append(" ");
+            }
+            sb.append("|");
+
+            // append the flooNumber
+            sb.append(contact.formatFloo());
+            // add spaces to the number
+            tempSpaces = maxCharactersInNumber - contact.formatFloo().length();
+            for(int i = 0; i < tempSpaces; i++){
+                sb.append(" ");
+            }
+            sb.append("|\n");
+        }
+        return sb.toString();
     }
 }

@@ -1,10 +1,14 @@
-Hermoine,Grangier,asciiArt/Hermoine.txt,5679034277
+Hermoine,Grangier,asciiArt/Hermoine.txt,1029384756
 
 Ron,Weasley,asciiArt/Ron.txt,8901234224
 
-Luna,Lovegood,asciiArt/Luna.txt,879457622
+Luna,Lovegood,asciiArt/Luna.txt,8794576228
 
 Miles,Raker,asciiArt/Nargul.txt,0983412422
 
 Ginny,Weasley,asciiArt/Filch.txt,8901855222
+
+Hermione,Granger,asciiArt/Ron.txt,8473948732
+
+Yeet,Yeeterson,asciiArt/Nargul.txt,0987654321
 
