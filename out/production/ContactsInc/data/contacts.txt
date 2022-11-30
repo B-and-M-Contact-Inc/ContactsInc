@@ -1,20 +1,12 @@
-Hermoine,Grangier,null,987654321
+Hermoine,Grangier,asciiArt/Hermoine.txt,987654321
 
-Ron,Weasley,null,123890423
+Ron,Weasley,asciiArt/Ron.txt,123890423
 
-Ron,Weasley,null,123890423
+Luna,Lovegood,asciiArt/Luna.txt,866787900
 
-Ron,Weasley,null,123890423
+Miles,Raker,asciiArt/Nargul.txt,983745
 
-Luna,Lovegood,null,866787900
+Tom,Riddle,asciiArt/Tom.txt,10848392
 
-Ron,Weasley,null,123890423
-
-Ron,Weasley,null,123890423
-
-Ron,Weasley,null,123890423
-
-Ron,Weasley,null,123890423
-
-Ron,Weasley,null,123890423
+Ginny,Weasley,asciiArt/Filch.txt,19848
 
