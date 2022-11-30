@@ -61,7 +61,7 @@ public class Contact {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        sb.append("Image: ").append(image).append("\n");
+        sb.append("Image: \n").append(image).append("\n");
         sb.append("--------------------\n");
         return sb.toString();
     }
